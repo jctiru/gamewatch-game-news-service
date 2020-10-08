@@ -18,4 +18,8 @@ public class AppPropertiesFile {
 		return env.getProperty("igdb.api.key");
 	}
 
+	public String getGameSpotApiKey() {
+		return env.getProperty("gamespot.api.key");
+	}
+
 }
