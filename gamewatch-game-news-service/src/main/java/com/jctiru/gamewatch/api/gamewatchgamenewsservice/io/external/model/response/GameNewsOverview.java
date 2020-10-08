@@ -3,13 +3,13 @@ package com.jctiru.gamewatch.api.gamewatchgamenewsservice.io.external.model.resp
 public class GameNewsOverview {
 
 	private long id;
-	private String author;
-	private String image;
-	private long published_at;
-	private PulseSource pulse_source;
-	private String summary;
+	private String authors;
+	private String publish_date;
+	private String update_date;
 	private String title;
-	private Website website;
+	private String deck;
+	private String site_detail_url;
+	private GameSpotArticleImage image;
 
 	public long getId() {
 		return id;
@@ -19,44 +19,28 @@ public class GameNewsOverview {
 		this.id = id;
 	}
 
-	public String getAuthor() {
-		return author;
+	public String getAuthors() {
+		return authors;
 	}
 
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setAuthors(String authors) {
+		this.authors = authors;
 	}
 
-	public String getImage() {
-		return image;
+	public String getPublish_date() {
+		return publish_date;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setPublish_date(String publish_date) {
+		this.publish_date = publish_date;
 	}
 
-	public long getPublished_at() {
-		return published_at;
+	public String getUpdate_date() {
+		return update_date;
 	}
 
-	public void setPublished_at(long published_at) {
-		this.published_at = published_at;
-	}
-
-	public PulseSource getPulse_source() {
-		return pulse_source;
-	}
-
-	public void setPulse_source(PulseSource pulse_source) {
-		this.pulse_source = pulse_source;
-	}
-
-	public String getSummary() {
-		return summary;
-	}
-
-	public void setSummary(String summary) {
-		this.summary = summary;
+	public void setUpdate_date(String update_date) {
+		this.update_date = update_date;
 	}
 
 	public String getTitle() {
@@ -67,12 +51,28 @@ public class GameNewsOverview {
 		this.title = title;
 	}
 
-	public Website getWebsite() {
-		return website;
+	public String getDeck() {
+		return deck;
 	}
 
-	public void setWebsite(Website website) {
-		this.website = website;
+	public void setDeck(String deck) {
+		this.deck = deck;
+	}
+
+	public String getSite_detail_url() {
+		return site_detail_url;
+	}
+
+	public void setSite_detail_url(String site_detail_url) {
+		this.site_detail_url = site_detail_url;
+	}
+
+	public GameSpotArticleImage getImage() {
+		return image;
+	}
+
+	public void setImage(GameSpotArticleImage image) {
+		this.image = image;
 	}
 
 }
