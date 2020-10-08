@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jctiru.gamewatch.api.gamewatchgamenewsservice.io.external.IgdbGameNewsServiceClient;
-import com.jctiru.gamewatch.api.gamewatchgamenewsservice.io.external.model.request.IgdbGameNewsParamsStringFactory;
+import com.jctiru.gamewatch.api.gamewatchgamenewsservice.io.external.GameSpotArticlesServiceClient;
+import com.jctiru.gamewatch.api.gamewatchgamenewsservice.io.external.model.request.GameSpotArticlesQueryParamsFactory;
 import com.jctiru.gamewatch.api.gamewatchgamenewsservice.io.external.model.response.GameNewsOverview;
 import com.jctiru.gamewatch.api.gamewatchgamenewsservice.service.GameNewsService;
 
@@ -14,10 +14,10 @@ import com.jctiru.gamewatch.api.gamewatchgamenewsservice.service.GameNewsService
 public class GameNewsServiceImpl implements GameNewsService {
 
 	@Autowired
-	private IgdbGameNewsServiceClient igdbGameNewsServiceClient;
+	private GameSpotArticlesServiceClient gameSpotArticlesServiceClient;
 
 	@Autowired
-	private IgdbGameNewsParamsStringFactory igdbGameCatalogParamsStringFactory;
+	private GameSpotArticlesQueryParamsFactory gameSpotArticlesQueryParamsFactory;
 
 	@Override
 	public List<GameNewsOverview> getGameNews(int limit, int page) {
@@ -32,8 +32,8 @@ public class GameNewsServiceImpl implements GameNewsService {
 		int pageValue = page - 1;
 		int offset = limit * pageValue;
 
-		return igdbGameNewsServiceClient
-				.getGamesNewsList(igdbGameCatalogParamsStringFactory.getGameNews(limit, offset));
+		return gameSpotArticlesServiceClient
+				.getGameSpotArticles(gameSpotArticlesQueryParamsFactory.getGameNews(limit, offset)).getResults();
 	}
 
 }
